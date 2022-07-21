@@ -12,8 +12,7 @@
 - Test reports are in 'Result' folder. Also, the screenshots of the test report and test log is in the 'Screenshot' folder.
 - Please review the Test script for more information. There you will find explanations in small notes.
 
-Best regards
-Mehmet Sezgin
-SW Test Automation Engineer
-Lahti, Finland
+// Mehmet Sezgin
+// SW Test Automation Engineer
+// Lahti, Finland
 
