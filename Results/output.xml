@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.7.4 on win32)" generated="20220721 16:14:55.349" rpa="false" schemaversion="3">
+<suite id="s1" name="Test case" source="C:\Users\Mehme\PycharmProjects\Formedix\Tests\Test_case.robot">
+<kw name="Begin web test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220721 16:14:55.512" level="INFO">Opening browser 'chrome' to base url 'https://ryze-staging.formedix.com/sign-in'.</msg>
+<status status="PASS" starttime="20220721 16:14:55.512" endtime="20220721 16:15:11.753"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220721 16:15:11.753" endtime="20220721 16:15:11.894"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220721 16:15:13.896" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220721 16:15:11.894" endtime="20220721 16:15:13.896"/>
+</kw>
+<kw name="Accept cookies" library="Common">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//button[@data-translate='app.ok']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220721 16:15:13.897" level="INFO">Clicking element 'xpath=//button[@data-translate='app.ok']'.</msg>
+<status status="PASS" starttime="20220721 16:15:13.897" endtime="20220721 16:15:13.971"/>
+</kw>
+<status status="PASS" starttime="20220721 16:15:13.897" endtime="20220721 16:15:13.972"/>
+</kw>
+<status status="PASS" starttime="20220721 16:14:55.511" endtime="20220721 16:15:13.972"/>
+</kw>
+<test id="s1-t1" name="End to end web test" line="12">
+<kw name="Login to the application using the credentials" library="SignIn">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USERNAME_BOX}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220721 16:15:13.974" level="INFO">Typing text 'testteamtechtest' into text field 'id=username'.</msg>
+<status status="PASS" starttime="20220721 16:15:13.973" endtime="20220721 16:15:14.082"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PASSWORD_BOX}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220721 16:15:14.083" level="INFO">Typing text 'T3st3rT3ch' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20220721 16:15:14.082" endtime="20220721 16:15:14.195"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${SIGNIN_BUTTON}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220721 16:15:14.196" endtime="20220721 16:15:14.227"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SIGNIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220721 16:15:14.227" level="INFO">Clicking element 'id=btnSubmit'.</msg>
+<status status="PASS" starttime="20220721 16:15:14.227" endtime="20220721 16:15:14.281"/>
+</kw>
+<status status="PASS" starttime="20220721 16:15:13.973" endtime="20220721 16:15:14.282"/>
+</kw>
+<kw name="Navigate to Repository-&gt;Studies and perform the following actions" library="Dashboard">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Dashboard</arg>
+<arg>5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220721 16:15:14.282" endtime="20220721 16:15:16.725"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${REPOSITORY}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20220721 16:15:16.726" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="menuMdb"]/fdx-main-nav-item/div/p[2]'.</msg>
+<status status="PASS" starttime="20220721 16:15:16.726" endtime="20220721 16:15:17.015"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${STUDIES}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220721 16:15:17.016" level="INFO">Clicking element 'xpath=(//span[@class="fdx-sub-nav-menu-item-label"])[2]'.</msg>
+<status status="PASS" starttime="20220721 16:15:17.016" endtime="20220721 16:15:17.113"/>
+</kw>
+<status status="PASS" starttime="20220721 16:15:14.282" endtime="20220721 16:15:17.113"/>
+</kw>
+<kw name="Confirm the options on the Tech Study menu" library="Dashboard">
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220721 16:15:20.121" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220721 16:15:17.114" endtime="20220721 16:15:20.121"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Updated</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220721 16:15:20.122" endtime="20220721 16:15:20.151"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${UPDATED}</arg>
+<arg>Updated</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220721 16:15:20.151" level="INFO">Verifying element 'xpath=//strong[@id='fdxMdbContainerListItem0StoredLabel']' contains exact text 'Updated'.</msg>
+<status status="PASS" starttime="20220721 16:15:20.151" endtime="20220721 16:15:20.178"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${STATUS}</arg>
+<arg>Status</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220721 16:15:20.179" level="INFO">Verifying element 'id=fdxMdbContainerListItem0StateLabel' contains exact text 'Status'.</msg>
+<status status="PASS" starttime="20220721 16:15:20.178" endtime="20220721 16:15:20.201"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${VERSION}</arg>
+<arg>Version</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220721 16:15:20.201" level="INFO">Verifying element 'xpath=//*[text()='Version']' contains exact text 'Version'.</msg>
+<status status="PASS" starttime="20220721 16:15:20.201" endtime="20220721 16:15:20.225"/>
+</kw>
+<status status="PASS" starttime="20220721 16:15:17.114" endtime="20220721 16:15:20.225"/>
+</kw>
+<kw name="Enter the tech test study view" library="Dashboard">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Tech_Study_Bar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220721 16:15:20.226" level="INFO">Clicking element 'id=fdxMdbContainerListItem0MenuToggle'.</msg>
+<status status="PASS" starttime="20220721 16:15:20.226" endtime="20220721 16:15:20.275"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>View</arg>
+<arg>5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220721 16:15:20.276" endtime="20220721 16:15:20.298"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${View_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220721 16:15:20.298" level="INFO">Clicking element 'id=fdxMdbContainerListItem0View'.</msg>
+<status status="PASS" starttime="20220721 16:15:20.298" endtime="20220721 16:15:20.351"/>
+</kw>
+<status status="PASS" starttime="20220721 16:15:20.225" endtime="20220721 16:15:20.351"/>
+</kw>
+<kw name="Enter the Data acquisition asset group view" library="Dashboard">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Asset groups</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220721 16:15:20.352" endtime="20220721 16:15:21.522"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220721 16:15:24.535" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220721 16:15:21.522" endtime="20220721 16:15:24.535"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Data_Acquisition}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220721 16:15:24.537" level="INFO">Clicking element 'id=dataAcquisitionName'.</msg>
+<status status="PASS" starttime="20220721 16:15:24.536" endtime="20220721 16:15:24.603"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Data_Acquisition_Headbar}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220721 16:15:24.603" endtime="20220721 16:15:24.647"/>
+</kw>
+<status status="PASS" starttime="20220721 16:15:20.351" endtime="20220721 16:15:24.647"/>
+</kw>
+<kw name="Select to view Forms" library="Dashboard">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${FORMS}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220721 16:15:24.648" endtime="20220721 16:15:25.969"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${FORMS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220721 16:15:25.970" level="INFO">Clicking element 'id=FORMTypeView'.</msg>
+<status status="PASS" starttime="20220721 16:15:25.969" endtime="20220721 16:15:26.013"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Medical History</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220721 16:15:26.013" endtime="20220721 16:15:26.699"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Medical_History}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220721 16:15:26.700" level="INFO">Clicking element 'xpath=//*[text()='Medical History']'.</msg>
+<status status="PASS" starttime="20220721 16:15:26.699" endtime="20220721 16:15:26.755"/>
+</kw>
+<status status="PASS" starttime="20220721 16:15:24.648" endtime="20220721 16:15:26.755"/>
+</kw>
+<kw name="Select to edit the form by adding a Description property to the form" library="Dashboard">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${EDIT_FORM}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220721 16:15:26.757" endtime="20220721 16:15:27.743"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain" library="SeleniumLibrary">
+<arg>Asset loaded</arg>
+<doc>Waits until ``text`` disappears from the current page.</doc>
+<status status="PASS" starttime="20220721 16:15:27.743" endtime="20220721 16:15:29.575"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${EDIT_FORM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220721 16:15:29.576" level="INFO">Clicking element 'id=switchEditMode'.</msg>
+<status status="PASS" starttime="20220721 16:15:29.575" endtime="20220721 16:15:29.949"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Add_description}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220721 16:15:29.949" endtime="20220721 16:15:29.983"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Add_description}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220721 16:15:29.983" level="INFO">Clicking element 'id=editPropsAddEntrydescription'.</msg>
+<status status="PASS" starttime="20220721 16:15:29.983" endtime="20220721 16:15:30.051"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220721 16:15:33.055" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220721 16:15:30.051" endtime="20220721 16:15:33.055"/>
+</kw>
+<status status="PASS" starttime="20220721 16:15:26.756" endtime="20220721 16:15:33.056"/>
+</kw>
+<kw name="Generate Random String" library="String">
+<var>${description}</var>
+<arg>8</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20220721 16:15:33.058" level="INFO">${description} = 1iUHYmdb</msg>
+<status status="PASS" starttime="20220721 16:15:33.057" endtime="20220721 16:15:33.058"/>
+</kw>
+<kw name="Generate Random String" library="String">
+<var>${locale}</var>
+<arg>2</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20220721 16:15:33.059" level="INFO">${locale} = 8j</msg>
+<status status="PASS" starttime="20220721 16:15:33.058" endtime="20220721 16:15:33.059"/>
+</kw>
+<kw name="Enter description and locale" library="Dashboard">
+<arg>${description}</arg>
+<arg>${locale}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Description_area}</arg>
+<arg>${description}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220721 16:15:33.062" level="INFO">Typing text '1iUHYmdb' into text field 'xpath=(//textarea[@id='assetLocaleEditTextTextareadescription'])[1]'.</msg>
+<status status="PASS" starttime="20220721 16:15:33.061" endtime="20220721 16:15:33.184"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Locale_area}</arg>
+<arg>${locale}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220721 16:15:33.185" level="INFO">Typing text '8j' into text field 'xpath=(//input[@id='localeInputdescription'])[1]'.</msg>
+<status status="PASS" starttime="20220721 16:15:33.185" endtime="20220721 16:15:33.304"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220721 16:15:38.314" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220721 16:15:33.304" endtime="20220721 16:15:38.315"/>
+</kw>
+<status status="PASS" starttime="20220721 16:15:33.060" endtime="20220721 16:15:38.315"/>
+</kw>
+<kw name="Save the change" library="Dashboard">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Validate &amp; Update</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220721 16:15:38.318" endtime="20220721 16:15:38.353"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VALIDATE_UPDATE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220721 16:15:38.354" level="INFO">Clicking element 'id=saveAsset'.</msg>
+<status status="PASS" starttime="20220721 16:15:38.353" endtime="20220721 16:15:38.433"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220721 16:15:43.441" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220721 16:15:38.433" endtime="20220721 16:15:43.441"/>
+</kw>
+<status status="PASS" starttime="20220721 16:15:38.316" endtime="20220721 16:15:43.442"/>
+</kw>
+<kw name="Confirm the user update has been preserved on the property panel, and on the main form view" library="Dashboard">
+<arg>${description}</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${actual_result}</var>
+<arg>id=formDescription</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220721 16:15:43.491" level="INFO">${actual_result} = 1iUHYmdb</msg>
+<status status="PASS" starttime="20220721 16:15:43.444" endtime="20220721 16:15:43.491"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${actual_result}</arg>
+<arg>${description}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220721 16:15:43.491" endtime="20220721 16:15:43.491"/>
+</kw>
+<status status="PASS" starttime="20220721 16:15:43.443" endtime="20220721 16:15:43.491"/>
+</kw>
+<kw name="Logout of the application" library="Dashboard">
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${LOG_OUT_MODULE}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20220721 16:15:43.493" level="INFO">Simulating Mouse Over on element 'xpath=//p[text()='testteamtechtest']'.</msg>
+<status status="PASS" starttime="20220721 16:15:43.493" endtime="20220721 16:15:43.790"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LOG_OUT_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220721 16:15:43.790" endtime="20220721 16:15:43.828"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOG_OUT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220721 16:15:43.829" level="INFO">Clicking element 'xpath=//p[text()='Sign out of ryze']'.</msg>
+<status status="PASS" starttime="20220721 16:15:43.829" endtime="20220721 16:15:43.895"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>You have signed out.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220721 16:15:43.895" endtime="20220721 16:15:44.851"/>
+</kw>
+<status status="PASS" starttime="20220721 16:15:43.492" endtime="20220721 16:15:44.851"/>
+</kw>
+<status status="PASS" starttime="20220721 16:15:13.972" endtime="20220721 16:15:44.852"/>
+</test>
+<kw name="End web test" library="Common" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220721 16:15:44.854" endtime="20220721 16:15:46.968"/>
+</kw>
+<status status="PASS" starttime="20220721 16:15:44.854" endtime="20220721 16:15:46.968"/>
+</kw>
+<status status="PASS" starttime="20220721 16:14:55.351" endtime="20220721 16:15:46.968"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test case">Test case</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
