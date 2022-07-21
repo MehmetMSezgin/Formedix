@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+#this page has been created for just SignIn Page
 
 *** Variables ***
 ${USERNAME} =    testteamtechtest

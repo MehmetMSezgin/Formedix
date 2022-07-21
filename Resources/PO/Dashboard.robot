@@ -1,9 +1,11 @@
 *** Settings ***
+#Step definitions of the test has been defined in this script
 Library    SeleniumLibrary
 Library    String
 
 
 *** Variables ***
+# Especially accurate and resilient locators has been used to increase the script's maintainability
 ${REPOSITORY} =    xpath=//*[@id="menuMdb"]/fdx-main-nav-item/div/p[2]
 ${STUDIES} =    xpath=(//span[@class="fdx-sub-nav-menu-item-label"])[2]
 ${UPDATED} =    xpath=//strong[@id='fdxMdbContainerListItem0StoredLabel']
